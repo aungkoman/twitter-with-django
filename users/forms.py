@@ -9,10 +9,3 @@ class UserRegistrationForm(UserCreationForm):
     class Meta:
         model = UserModel
         fields = ["username","email", "password1", "password2"]
-
-
-class TodoForm(forms.ModelForm):
-
-    class Meta:
-        fields = "__all__"
-        

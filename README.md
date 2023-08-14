@@ -58,5 +58,6 @@ User Registration နဲ့ တင်တိုင်ပတ်။
 
 
 - user register အိုကေလား ဆိုတာကို  admin panel မှာ ကြည့်။
+login form လုပ်မယ်။
 
 

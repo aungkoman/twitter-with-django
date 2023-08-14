@@ -1,1 +1,12 @@
 <h2>User Panel</h2>
+
+{% if user.is_authenticated %}
+            <p id="welcome-user">Welcome, {{ request.user.username }}</p>
+
+            <ul>
+                <li class="navbar-item">
+                    <a class="link" href="#">ha h</a>
+                </li>
+            </ul>
+        {% endif %}
+	</nav>

@@ -7,7 +7,7 @@ urlpatterns = [
     # first parameter is url path
     # second parameter is function name 
     path("hello/", views.index),
-    path("login/", views.login, name="login"),
+    path("login/", views.login_route, name="login"),
     path("register/", views.register, name="register"),
     path("user-panel/", views.user_panel, name="user_panel"),
     path("update/", views.update, name="update"),
