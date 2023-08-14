@@ -74,6 +74,6 @@ def user_panel(request):
     return render(request, 'user_panel.html')
 
 
-def logout(request):
+def user_logout(request):
     logout(request)
-    login_route(request)
+    return redirect('login')

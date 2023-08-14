@@ -8,5 +8,13 @@
                     <a href="{% url 'logout' %}" class="login-link">Logout</a>
                 </li>
             </ul>
-        {% endif %}
+{% else %}
+<p id="welcome-user">Need to Login</p>
+
+<ul>
+    <li class="navbar-item">
+        <a href="{% url 'login' %}" class="login-link">Login</a>
+    </li>
+</ul>
+{% endif %}
 	</nav>

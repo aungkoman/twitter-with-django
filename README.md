@@ -61,3 +61,16 @@ User Registration နဲ့ တင်တိုင်ပတ်။
 login form လုပ်မယ်။
 
 
+
+Form ဆောက်ပြီး Manual လုပ်ဖို့ဆိုရင်
+
+https://docs.djangoproject.com/en/4.2/topics/auth/default/
+
+ရိုးရိုး HTML Form ကနေ Data ပို့
+view ကနေ လက်ခံပြီး သက်ဆိုင်ရာ Model ဆောက်
+Login Method သုံး
+Logout သုံး
+
+ဒါဆို Register ရပြီ။
+
+Request မှာလည်း authenticated ဖြစ်နေမယ်။
