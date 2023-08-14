@@ -7,3 +7,15 @@ from django.http import HttpResponse
 def index(request):
     # step 1.3 return content with HttpResponse
     return HttpResponse("Hello World")
+
+def login(request):
+    return render(request, 'login.html')
+
+def register(request):
+    return render(request, 'register.html')
+
+def update(request):
+    return render(request, 'update.html')
+
+def user_panel(request):
+    return render(request, 'user_panel.html')
