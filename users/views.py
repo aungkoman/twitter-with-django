@@ -6,6 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm #add this
 from django.contrib.auth import login, authenticate #add this
 from django.contrib import messages
 from django.contrib.auth import logout
+from django.contrib.auth.models import User
 
 # step 1.2 create function with request parameter
 # index is function name
@@ -16,6 +17,25 @@ def index(request):
 
 def sample_register_route(request):
     return render(request, 'user_management/register.html')
+
+def sample_register_route_data(request):
+    email = request.POST['email']
+    username = request.POST['username']
+    password = request.POST['password']
+    first_name = request.POST['first_name']
+    last_name = request.POST['last_name']
+    user = User.objects.create_user(username=username, email=email, password=password)
+    user.first_name = first_name
+    user.last_name = last_name
+    user.save()
+    if user is not None:
+        # A backend authenticated the credentials
+        login(request, user)
+        return redirect("user_panel")
+    else:
+        # No backend authenticated the credentials
+        return HttpResponse("register failed :  " + username + ", " + password) #render(request, 'user_management/login.html')
+
 
 def sample_login_route(request):
     return render(request, 'user_management/login.html')
@@ -31,7 +51,7 @@ def sample_login_route_data(request):
         return redirect("user_panel")
     else:
         # No backend authenticated the credentials
-        return HttpResponse(username + ", " + password) #render(request, 'user_management/login.html')
+        return HttpResponse("credential does not match " + username + ", " + password) #render(request, 'user_management/login.html')
     
 
 def login_route(request):

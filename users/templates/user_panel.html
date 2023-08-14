@@ -2,7 +2,10 @@
 
 {% if user.is_authenticated %}
             <p id="welcome-user">Welcome, {{ request.user.username }}</p>
-
+            <p>First Name : {{ request.user.first_name }} </p>
+            <p>Last Name : {{ request.user.last_name }} </p>
+            <p>Email : {{ request.user.email }} </p>
+            <p>Created At : {{ request.user.date_joined }} </p>
             <ul>
                 <li class="navbar-item">
                     <a href="{% url 'logout' %}" class="login-link">Logout</a>
