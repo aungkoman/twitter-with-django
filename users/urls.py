@@ -13,5 +13,6 @@ urlpatterns = [
     path("update/", views.update, name="update"),
     path("logout/", views.user_logout, name="logout"),
     path("sample-login/", views.sample_login_route, name="sample_login_route"),
+    path("sample-login-data/", views.sample_login_route_data, name="sample_login_route_data"),
     
 ]

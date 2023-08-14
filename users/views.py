@@ -14,8 +14,25 @@ def index(request):
     return HttpResponse("Hello World")
 
 
+def sample_register_route(request):
+    return render(request, 'user_management/register.html')
+
 def sample_login_route(request):
     return render(request, 'user_management/login.html')
+
+def sample_login_route_data(request):
+    # login using username and password
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username= username, password=password)
+    if user is not None:
+        # A backend authenticated the credentials
+        login(request, user)
+        return redirect("user_panel")
+    else:
+        # No backend authenticated the credentials
+        return HttpResponse(username + ", " + password) #render(request, 'user_management/login.html')
+    
 
 def login_route(request):
     """
