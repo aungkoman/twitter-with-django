@@ -43,3 +43,12 @@ python manage.py startapp users
 
 https://github.com/aungkoman/django-hello/blob/main/HOWTO.md
 
+
+Template (4) ခု လိုမယ်။
+
+- login
+- register
+- user panel
+- update form 
+
+
