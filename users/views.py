@@ -5,6 +5,7 @@ from .forms import UserRegistrationForm
 from django.contrib.auth.forms import AuthenticationForm #add this
 from django.contrib.auth import login, authenticate #add this
 from django.contrib import messages
+from django.contrib.auth import logout
 
 # step 1.2 create function with request parameter
 # index is function name
@@ -71,3 +72,8 @@ def update(request):
 
 def user_panel(request):
     return render(request, 'user_panel.html')
+
+
+def logout(request):
+    logout(request)
+    login_route(request)
