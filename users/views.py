@@ -14,6 +14,9 @@ def index(request):
     return HttpResponse("Hello World")
 
 
+def sample_login_route(request):
+    return render(request, 'user_management/login.html')
+
 def login_route(request):
     """
     User Registration form

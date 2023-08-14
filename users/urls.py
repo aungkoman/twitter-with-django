@@ -12,5 +12,6 @@ urlpatterns = [
     path("user-panel/", views.user_panel, name="user_panel"),
     path("update/", views.update, name="update"),
     path("logout/", views.user_logout, name="logout"),
+    path("sample-login/", views.sample_login_route, name="sample_login_route"),
     
 ]
