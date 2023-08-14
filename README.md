@@ -51,4 +51,12 @@ Template (4) ခု လိုမယ်။
 - user panel
 - update form 
 
+## အရံသင့် လုပ်ပေးထားတာတွေ များလွန်းတယ်။
+
+User Registration နဲ့ တင်တိုင်ပတ်။
+
+
+
+- user register အိုကေလား ဆိုတာကို  admin panel မှာ ကြည့်။
+
 
