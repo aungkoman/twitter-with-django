@@ -7,14 +7,15 @@ urlpatterns = [
     # first parameter is url path
     # second parameter is function name 
     path("hello/", views.index),
-    path("login/", views.login_route, name="login"),
-    path("register/", views.register, name="register"),
+    # path("login/", views.login_route, name="login"),
+    # path("register/", views.register, name="register"),
+    path("",views.index,name="index"),
+    path("login/", views.sample_login_route, name="sample_login_route"),
+    path("login-data/", views.sample_login_route_data, name="sample_login_route_data"),
     path("user-panel/", views.user_panel, name="user_panel"),
-    path("update/", views.update, name="update"),
     path("logout/", views.user_logout, name="logout"),
-    path("sample-login/", views.sample_login_route, name="sample_login_route"),
-    path("sample-login-data/", views.sample_login_route_data, name="sample_login_route_data"),
-    path("sample-register/", views.sample_register_route, name="sample_register_route"),
-    path("sample-register-data/", views.sample_register_route_data, name="sample_register_route_data")
+    path("update/", views.update, name="update"),
+    path("register/", views.sample_register_route, name="sample_register_route"),
+    path("register-data/", views.sample_register_route_data, name="sample_register_route_data")
     
 ]

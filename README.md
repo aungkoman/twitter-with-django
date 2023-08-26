@@ -74,3 +74,22 @@ Logout သုံး
 ဒါဆို Register ရပြီ။
 
 Request မှာလည်း authenticated ဖြစ်နေမယ်။
+
+
+## 2023-08-26 Basic (6) CRUD Modules
+
+- [ ] User
+- [ ] Profile
+- [ ] Post
+- [ ] Like
+- [ ] Comment
+- [ ] Share
+
+
+### User
+
+Login Page
+Login Business Logic
+Register Page
+Register Business Logic
+

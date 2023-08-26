@@ -12,7 +12,8 @@ from django.contrib.auth.models import User
 # index is function name
 def index(request):
     # step 1.3 return content with HttpResponse
-    return HttpResponse("Hello World")
+    return render(request, 'index.html')
+    # return HttpResponse("Hello World")
 
 
 def sample_register_route(request):
@@ -116,4 +117,4 @@ def user_panel(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('login')
+    return redirect('index')
