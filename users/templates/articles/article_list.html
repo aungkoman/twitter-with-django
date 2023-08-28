@@ -3,7 +3,9 @@
 <ul>
     {% for article in articles %}
         <li>
-            {{ article.description }} 
+            <a href="{% url 'article_detail' article.id %}" >
+                {{ article.description }} 
+            </a>
             {% if article.media|length > 0 %}
                 <br>
                 <img src="{{ article.media.url }}" width="100px" />

@@ -3,11 +3,11 @@
 <table>
     <tr>
         <td>User</td>
-        <td>{{ article.user_profile.user.name }} </td>
+        <td>{{ article.user_profile_info.user.username }} </td>
     </tr>
     <tr>
         <td>Profile</td>
-        <td> <img src="{{ article.user_profile.profile_picture.url }}"  width="100px"/></td>
+        <td> <img src="{{ article.user_profile_info.profile_picture.url }}"  width="100px"/></td>
     </tr>
     <tr>
         <td>description</td>
@@ -15,6 +15,10 @@
     </tr>
     <tr>
         <td>media</td>
-        <td> <img src="{{ article.media.url  }}"  width="100px"/></td>
+        <td> 
+            {% if article.media|length > 0 %}
+                <img src="{{ article.media.url }}" width="100px" />
+            {% endif %}
+        </td>
     </tr>
 </table>

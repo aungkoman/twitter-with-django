@@ -27,5 +27,6 @@ urlpatterns = [
     path("article-list/", views.article_list, name="article_list"),
     path("create-article/", views.create_article, name="create_article"),
     path("create-article-data/", views.create_article_data, name="create_article_data"),
+    path('article-detail/<int:article_id>/', views.article_detail, name='article_detail'),
     
 ]

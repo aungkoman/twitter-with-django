@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
-
+from django.shortcuts import render, get_object_or_404
 # step 1.2 create function with request parameter
 # index is function name
 def index(request):
@@ -228,3 +228,10 @@ def create_article_data(request):
             user_profile = None
     # need to add status message
     return redirect("article_list")
+
+def article_detail(request, article_id):
+    article = get_object_or_404(Article, id=article_id)
+    context = {
+        "article" : article
+    }
+    return render(request, 'articles/detail.html', context)
