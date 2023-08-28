@@ -209,3 +209,7 @@ def article_list(request):
         "articles" : articles,
     }
     return render(request, 'articles/article_list.html', context)
+
+
+def create_article(request):
+    return render(request, 'articles/create.html')
