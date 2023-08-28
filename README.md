@@ -28,6 +28,24 @@ Profile Info မှာ ပြတာပဲ ရှိတယ်။
 
 User Profile Module ရပြီ။
 
+- Post ဆက်လုပ်မယ်။
+
+- Article လုပ်မယ်။
+
+ဘာတွေပါမလဲ?
+
+content
+media array 
+
+ဒါပဲ ပါမယ်။
+owner ကတော့ User ပေါ့။
+ဒါမှ မဟုတ် Profile 
+
+Profile ပဲ ထားမယ်။
+
+Article Model တစ်ခုဆောက်ပြီး Admin Panel မှာ ထည့်ထားပြီးဖြစ်။
+
+
 
 
 

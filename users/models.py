@@ -12,3 +12,12 @@ class UserProfileInfo(models.Model):
     # methods
     def __str__(self):
         return self.user.username + " " + self.city
+
+class Article(models.Model):  
+    user_profile_info = models.ForeignKey(UserProfileInfo, on_delete=models.CASCADE)
+    description = models.TextField()
+    media = models.FileField(upload_to='article_pictures/', blank=True, null=True)
+
+    # methods
+    def __str__(self):
+        return self.description
