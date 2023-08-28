@@ -208,4 +208,4 @@ def article_list(request):
         "user_profile" : user_profile,
         "articles" : articles,
     }
-    return render(request, 'articles/index.html', context)
+    return render(request, 'articles/article_list.html', context)

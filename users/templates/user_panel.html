@@ -22,6 +22,9 @@ hello is {{ hello }}.
                     </li>
                 {% else %}
                     <li class="navbar-item">
+                        <a href="{% url 'article_list' %}" class="login-link">Article List</a>
+                    </li>
+                    <li class="navbar-item">
                         <a href="{% url 'update_user_profile' %}" class="login-link">Edit</a>
                     </li>
                     <li class="navbar-item">

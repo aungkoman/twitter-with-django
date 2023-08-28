@@ -1,0 +1,14 @@
+<h2>User's Article List</h2>
+
+<ul>
+    {% for article in articles %}
+        <li>
+            {{ article.description }} 
+            {% if article.media|length > 0 %}
+                <br>
+                <img src="{{ article.media.url }}" width="100px" />
+            {% endif %}
+            <hr>
+        </li>
+    {% endfor %}
+</ul>

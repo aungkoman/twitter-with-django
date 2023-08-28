@@ -23,5 +23,7 @@ urlpatterns = [
     path("delete-user-profile-data/", views.delete_user_profile_data, name="delete_user_profile_data"),
     path("create-user-profile/", views.create_user_profile, name="create_user_profile"),
     path("create-user-profile-data/", views.create_user_profile_data, name="create_user_profile_data"),
+
+    path("article-list/", views.article_list, name="article_list"),
     
 ]
