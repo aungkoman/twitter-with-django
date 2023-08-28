@@ -93,5 +93,18 @@ Login Business Logic
 Register Page
 Register Business Logic
 
+- Post Page လုပ်မယ်။
+
+Post ရဲ့ ဖွဲ့စည်းပုံကို အရင်လုပ်ရမယ်။
+
+Post တစ်ခုမှာ
+- id
+- user
+- content
+- media [] တွေပါကောင်းပါမယ်။
+
+ဒါပဲ။
+
+ဒါဆို Media ဆိုသည်းသန့်ထားရမလား?
 
 
