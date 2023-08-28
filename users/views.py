@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 # step 1.1 import HttpResponse 
 from django.http import HttpResponse
 
-from users.models import UserProfileInfo
+from users.models import Article, UserProfileInfo
 from .forms import UserRegistrationForm
 from django.contrib.auth.forms import AuthenticationForm #add this
 from django.contrib.auth import login, authenticate #add this
@@ -192,3 +192,20 @@ def create_user_profile_data(request):
         UserProfileInfo.objects.create(user=user, city=city, dob = dob, profile_picture = profile_picture)
         return redirect('user_panel')
     return redirect('user_panel')
+
+
+def article_list(request):
+    user = request.user 
+    user_profile =  None # UserProfileInfo.objects.get(user=user) 
+    articles = []
+    try:
+        user_profile = UserProfileInfo.objects.get(user=user) 
+        # tasks = Task.objects.filter(category__name=category_name)
+        articles = Article.objects.filter(user_profile_info = user_profile)
+    except ObjectDoesNotExist:
+        user_profile = None
+    context = {
+        "user_profile" : user_profile,
+        "articles" : articles,
+    }
+    return render(request, 'articles/index.html', context)
