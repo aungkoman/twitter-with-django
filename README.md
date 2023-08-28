@@ -1,5 +1,10 @@
 # Twitter with Django
 
+## Procedure
+
+ဘာလုပ်လုပ် Admin Panel ထဲမှာ အရင်ထည့်မယ်။
+
+
 
 ## Bash Logs
 
