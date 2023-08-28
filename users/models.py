@@ -8,3 +8,7 @@ class UserProfileInfo(models.Model):
     city = models.CharField(max_length=25,blank=True,null=True)
     # file will be uploaded to MEDIA_ROOT/uploads
     profile_picture = models.FileField(upload_to='profile_pictures/', blank=True, null=True)
+
+    # methods
+    def __str__(self):
+        return self.user.username + " " + self.city
