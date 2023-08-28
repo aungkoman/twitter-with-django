@@ -135,15 +135,21 @@ def update_user_profile(request):
     context = {
         "user_profile" : user_profile
     }
-    return render(request, 'user_profile.update.html', context)
+    return render(request, 'user_profile/edit.html', context)
 
 def update_user_profile_data(request):
     user = request.user 
     user_profile =  UserProfileInfo.objects.get(user=user)
     # update 
     if request.method == 'POST':
-        title = request.POST.get('title')
+        city = request.POST.get('city')
+        dob = request.POST.get('dob')
+        profile_picture = request.FILES.get('profile_picture')
+        user_profile.city = city
+        user_profile.dob = dob
+        user_profile.profile_picture = profile_picture
+        user_profile.save()
         # todo.title = title
         # todo.save()
-        return redirect('todo_list')
+        return redirect('user_panel')
     return redirect('update_user_profile')

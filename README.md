@@ -20,6 +20,7 @@ Profile Info မှာ ပြတာပဲ ရှိတယ်။
 - [ ] Edit လုပ်မယ်
     - [x] template ထည့်ပြီးပြီ။
     - [x] url နဲ့ view ထည့်မယ်။
+    - [x] အိုကေသွားပြီ။​ form field optional တွေ လုပ်ရမယ်။
 - [ ] Insert လုပ်မယ်။
 - [ ] Delete လုပ်မယ်။
 

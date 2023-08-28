@@ -2,8 +2,8 @@
 
 <form action="{% url 'update_user_profile_data' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="text" name="city" placeholder="city" />
-    <input type="date" name="dob" placeholder="date" />
+    <input type="text" name="city" value="{{ user_profile.city }}" placeholder="city" />
+    <input type="date" name="dob" value="{{ user_profile.dob|date:'Y-m-d' }}"  placeholder="date" />
     <input type="file" name="profile_picture" placeholder="profile_picture" />
     
     <input type="submit" value="Update" />
