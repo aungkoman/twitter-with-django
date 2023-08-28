@@ -222,7 +222,7 @@ def create_article_data(request):
         try:
             user_profile = UserProfileInfo.objects.get(user=user) 
             description = request.POST.get("description")
-            media = request.get("description")
+            media = request.FILES.get('media')
             Article.objects.create(user_profile_info=user_profile, description= description, media = media )
         except ObjectDoesNotExist:
             user_profile = None
