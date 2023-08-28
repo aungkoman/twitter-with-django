@@ -16,6 +16,9 @@ hello is {{ hello }}.
                 <li class="navbar-item">
                     <a href="{% url 'logout' %}" class="login-link">Logout</a>
                 </li>
+                <li class="navbar-item">
+                    <a href="{% url 'update_user_profile' %}" class="login-link">Edit</a>
+                </li>
             </ul>
 {% else %}
 <p id="welcome-user">Need to Login</p>

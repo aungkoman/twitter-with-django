@@ -127,3 +127,23 @@ def user_panel(request):
 def user_logout(request):
     logout(request)
     return redirect('index')
+
+
+def update_user_profile(request):
+    user = request.user 
+    user_profile =  UserProfileInfo.objects.get(user=user)
+    context = {
+        "user_profile" : user_profile
+    }
+    return render(request, 'user_profile.update.html', context)
+
+def update_user_profile_data(request):
+    user = request.user 
+    user_profile =  UserProfileInfo.objects.get(user=user)
+    # update 
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        # todo.title = title
+        # todo.save()
+        return redirect('todo_list')
+    return redirect('update_user_profile')

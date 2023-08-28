@@ -16,8 +16,10 @@ Profile Info မှာ ပြတာပဲ ရှိတယ်။
 ဝင်ထားတဲ့ User ရဲ့ Profile Info ကို Pass လုပ်ပေးလိုက်မယ်။
 
 
-- [ ] User Profile Select အဆင်ပြေပြီ။
+- [x] User Profile Select အဆင်ပြေပြီ။
 - [ ] Edit လုပ်မယ်
+    - [x] template ထည့်ပြီးပြီ။
+    - [x] url နဲ့ view ထည့်မယ်။
 - [ ] Insert လုပ်မယ်။
 - [ ] Delete လုပ်မယ်။
 

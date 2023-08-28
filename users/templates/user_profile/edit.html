@@ -1,0 +1,10 @@
+<h2>User Profile Edit</h2>
+
+<form action="{% url 'update_user_profile_data' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="city" placeholder="city" />
+    <input type="date" name="dob" placeholder="date" />
+    <input type="file" name="profile_picture" placeholder="profile_picture" />
+    
+    <input type="submit" value="Update" />
+</form>
