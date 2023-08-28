@@ -21,10 +21,14 @@ Profile Info မှာ ပြတာပဲ ရှိတယ်။
     - [x] template ထည့်ပြီးပြီ။
     - [x] url နဲ့ view ထည့်မယ်။
     - [x] အိုကေသွားပြီ။​ form field optional တွေ လုပ်ရမယ်။
-- [ ] Insert လုပ်မယ်။
-- [ ] Delete လုပ်မယ်။
+- [x] Insert လုပ်မယ်။
+- [x] Delete လုပ်မယ်။
 
 ဒါဆို Module တစ်ခု ရပြီ။
+
+User Profile Module ရပြီ။
+
+
 
 
 

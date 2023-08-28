@@ -24,12 +24,13 @@ hello is {{ hello }}.
                     <li class="navbar-item">
                         <a href="{% url 'update_user_profile' %}" class="login-link">Edit</a>
                     </li>
+                    <li class="navbar-item">
+                        <a href="{% url 'delete_user_profile_data' %}" class="login-link">Remove Profile Info</a>
+                    </li>
                 {% endif %}
 
                 
-                <li class="navbar-item">
-                    <a href="{% url 'delete_user_profile_data' %}" class="login-link">Remove Profile Info</a>
-                </li>
+                
             </ul>
 {% else %}
 <p id="welcome-user">Need to Login</p>
