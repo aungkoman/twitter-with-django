@@ -1,0 +1,7 @@
+<h2>User's Article List</h2>
+
+<ul>
+    {% for article in articles %}
+        <li>{{ article->description }}</li>
+    {% endfor %}
+</ul>
