@@ -1,0 +1,20 @@
+<h2>Article Detail</h2>
+
+<table>
+    <tr>
+        <td>User</td>
+        <td>{{ article.user_profile.user.name }} </td>
+    </tr>
+    <tr>
+        <td>Profile</td>
+        <td> <img src="{{ article.user_profile.profile_picture.url }}"  width="100px"/></td>
+    </tr>
+    <tr>
+        <td>description</td>
+        <td>{{ article.description }}</td>
+    </tr>
+    <tr>
+        <td>media</td>
+        <td> <img src="{{ article.media.url  }}"  width="100px"/></td>
+    </tr>
+</table>
