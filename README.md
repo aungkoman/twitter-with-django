@@ -47,11 +47,12 @@ Article Model တစ်ခုဆောက်ပြီး Admin Panel မှာ �
 
 - template မှာ လေးခုထည့်မယ်။
     - [x] Article List
-    - [ ] Article New Form
+    - [x] Article New Form
     - [ ] Article Detail
     - [ ] Article Edit Form
     - [ ] Article Delete ( Data Link )
 
+C နဲ့ R လုပ်တာ မိနစ် (၄၀)​ ကြာ။
 
 
 
