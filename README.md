@@ -48,15 +48,24 @@ Article Model တစ်ခုဆောက်ပြီး Admin Panel မှာ �
 - template မှာ လေးခုထည့်မယ်။
     - [x] Article List
     - [x] Article New Form
-    - [ ] Article Detail
-    - [ ] Article Edit Form
-    - [ ] Article Delete ( Data Link )
+    - [x] Article Detail
+    - [x] Article Edit Form
+    - [x] Article Delete ( Data Link )
 
 C နဲ့ R လုပ်တာ မိနစ် (၄၀)​ ကြာ။
 U D က မိနစ် (၂၀)။
 စုစုပေါင်း (၁)​ နာရီ။
 
 Backbone နဲ့ ရေးခဲ့တဲ့ မိနစ် (၄၀) ကို ရောက်အောင်လုပ်ရမယ်။
+
+
+ဆက်လုပ်မှာက 
+
+User NewsFeed Page 
+Like / Unlike
+Comment
+
+ဒီလောက်ဆိုရင် UI ဘက်ကို စလုပ်လို့ရပြီ။
 
 
 
