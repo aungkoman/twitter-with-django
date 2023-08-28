@@ -46,7 +46,7 @@ Profile ပဲ ထားမယ်။
 Article Model တစ်ခုဆောက်ပြီး Admin Panel မှာ ထည့်ထားပြီးဖြစ်။
 
 - template မှာ လေးခုထည့်မယ်။
-    - [ ] Article List
+    - [x] Article List
     - [ ] Article New Form
     - [ ] Article Detail
     - [ ] Article Edit Form

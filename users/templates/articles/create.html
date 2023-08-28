@@ -1,0 +1,10 @@
+<h2>New Article</h2>
+<form action="{% url 'create_article_date' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="description" placeholder="description" required/>
+    <input type="file" name="media" placeholder="media" />
+    
+    <input type="submit" value="Create" />
+</form>
+<p>Already Have an Account?</p>
+<a href="{% url 'sample_login_route' %}" >Login</a>
