@@ -213,3 +213,18 @@ def article_list(request):
 
 def create_article(request):
     return render(request, 'articles/create.html')
+
+
+def create_article_data(request):
+    user = request.user 
+    user_profile =  None # UserProfileInfo.objects.get(user=user) 
+    if request.method == 'POST':
+        try:
+            user_profile = UserProfileInfo.objects.get(user=user) 
+            description = request.POST.get("description")
+            media = request.get("description")
+            Article.objects.create(user_profile_info=user_profile, description= description, media = media )
+        except ObjectDoesNotExist:
+            user_profile = None
+    # need to add status message
+    return redirect("article_list")
