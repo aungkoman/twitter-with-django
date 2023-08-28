@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 # step 1.1 import HttpResponse 
 from django.http import HttpResponse
+
+from users.models import UserProfileInfo
 from .forms import UserRegistrationForm
 from django.contrib.auth.forms import AuthenticationForm #add this
 from django.contrib.auth import login, authenticate #add this
@@ -49,6 +51,7 @@ def sample_login_route_data(request):
     if user is not None:
         # A backend authenticated the credentials
         login(request, user)
+        
         return redirect("user_panel")
     else:
         # No backend authenticated the credentials
@@ -112,7 +115,13 @@ def update(request):
     return render(request, 'update.html')
 
 def user_panel(request):
-    return render(request, 'user_panel.html')
+    user = request.user 
+    user_profile =  UserProfileInfo.objects.get(user=user)
+    context = {
+        "hello" : "world",
+        "user_profile" : user_profile
+    }
+    return render(request, 'user_panel.html', context)
 
 
 def user_logout(request):

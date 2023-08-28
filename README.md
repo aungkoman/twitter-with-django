@@ -4,6 +4,25 @@
 
 ဘာလုပ်လုပ် Admin Panel ထဲမှာ အရင်ထည့်မယ်။
 
+Admin Panel မှာ မှန်မှန်ကန်ကန် အလုပ်လုပ်ပြီ။
+
+View နဲ့ Template တွေ ရေးမယ်။
+
+View မှာ Select အရင်လုပ်မယ်။
+လောလောဆယ် ဒဲ့ Select တာ မရှိပဲ 
+
+Profile Info မှာ ပြတာပဲ ရှိတယ်။
+
+ဝင်ထားတဲ့ User ရဲ့ Profile Info ကို Pass လုပ်ပေးလိုက်မယ်။
+
+
+- [ ] User Profile Select အဆင်ပြေပြီ။
+- [ ] Edit လုပ်မယ်
+- [ ] Insert လုပ်မယ်။
+- [ ] Delete လုပ်မယ်။
+
+ဒါဆို Module တစ်ခု ရပြီ။
+
 
 
 ## Bash Logs
