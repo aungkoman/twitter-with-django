@@ -9,6 +9,7 @@ from django.contrib.auth import login, authenticate #add this
 from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 
 # step 1.2 create function with request parameter
 # index is function name
@@ -116,7 +117,11 @@ def update(request):
 
 def user_panel(request):
     user = request.user 
-    user_profile =  UserProfileInfo.objects.get(user=user)
+    user_profile =  None # UserProfileInfo.objects.get(user=user) 
+    try:
+        user_profile = UserProfileInfo.objects.get(user=user) 
+    except ObjectDoesNotExist:
+        user_profile = None
     context = {
         "hello" : "world",
         "user_profile" : user_profile
@@ -137,6 +142,11 @@ def update_user_profile(request):
     }
     return render(request, 'user_profile/edit.html', context)
 
+
+def create_user_profile(request):
+    user = request.user 
+    return render(request, 'user_profile/create.html')
+
 def update_user_profile_data(request):
     user = request.user 
     user_profile =  UserProfileInfo.objects.get(user=user)
@@ -153,3 +163,30 @@ def update_user_profile_data(request):
         # todo.save()
         return redirect('user_panel')
     return redirect('update_user_profile')
+
+
+def delete_user_profile_data(request):
+    user = request.user 
+    try:
+        user_profile = UserProfileInfo.objects.get(user=user) 
+        user_profile.delete()
+        return redirect('user_panel')
+    except ObjectDoesNotExist:
+        return redirect('user_panel')
+    
+
+def create_user_profile_data(request):
+    # update 
+    if request.method == 'POST':
+        user = request.user 
+        user_profile =  UserProfileInfo.objects.create()
+        city = request.POST.get('city')
+        dob = request.POST.get('dob')
+        profile_picture = request.FILES.get('profile_picture')
+        user_profile.city = city
+        user_profile.dob = dob
+        user_profile.profile_picture = profile_picture
+        user_profile.user = user
+        user_profile.save()
+        return redirect('user_panel')
+    return redirect('user_panel')

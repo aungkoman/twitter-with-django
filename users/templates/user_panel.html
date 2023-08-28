@@ -16,8 +16,19 @@ hello is {{ hello }}.
                 <li class="navbar-item">
                     <a href="{% url 'logout' %}" class="login-link">Logout</a>
                 </li>
+                {% if not user_profile %}
+                    <li class="navbar-item">
+                        <a href="{% url 'create_user_profile' %}" class="login-link">Create User Profile</a>
+                    </li>
+                {% else %}
+                    <li class="navbar-item">
+                        <a href="{% url 'update_user_profile' %}" class="login-link">Edit</a>
+                    </li>
+                {% endif %}
+
+                
                 <li class="navbar-item">
-                    <a href="{% url 'update_user_profile' %}" class="login-link">Edit</a>
+                    <a href="{% url 'delete_user_profile_data' %}" class="login-link">Remove Profile Info</a>
                 </li>
             </ul>
 {% else %}
