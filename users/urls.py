@@ -28,5 +28,8 @@ urlpatterns = [
     path("create-article/", views.create_article, name="create_article"),
     path("create-article-data/", views.create_article_data, name="create_article_data"),
     path('article-detail/<int:article_id>/', views.article_detail, name='article_detail'),
+    path('edit-article/<int:article_id>/', views.edit_article, name='edit_article'),
+    path('edit-article-data/<int:article_id>/', views.edit_article_data, name='edit_article_data'),
+    path('delete-article/<int:article_id>/', views.delete_article, name='delete_article'),
     
 ]

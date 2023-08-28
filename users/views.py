@@ -235,3 +235,25 @@ def article_detail(request, article_id):
         "article" : article
     }
     return render(request, 'articles/detail.html', context)
+
+
+def edit_article(request, article_id):
+    article = get_object_or_404(Article, id=article_id)
+    context = {
+        "article" : article
+    }
+    return render(request, 'articles/edit.html', context)
+
+def edit_article_data(request, article_id):
+    article = get_object_or_404(Article, id=article_id)
+    description = request.POST.get("description")
+    media = request.FILES.get('media')
+    article.description = description
+    article.media = media
+    article.save()
+    return redirect('article_detail',article.id)
+
+def delete_article(request, article_id):
+    article = get_object_or_404(Article, id=article_id)
+    article.delete()
+    return redirect("article_list")

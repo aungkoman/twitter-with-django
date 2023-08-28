@@ -1,0 +1,7 @@
+<h2>Edit Article</h2>
+<form action="{% url 'edit_article_data' article.id %}" method="POST"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="description" placeholder="description" value="{{  article.description }}" required/>
+    <input type="file" name="media" placeholder="media" />
+    <input type="submit" value="Create" />
+</form>
