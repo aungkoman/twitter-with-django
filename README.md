@@ -69,6 +69,18 @@ Comment
 
 
 
+## 2023-09-05 Road Map
+
+- [ ] News Feed Page with pagination
+- [ ] Like / Unlike Ajax
+- [ ] Article detail with comment selection
+- [ ] Create Comment
+- [ ] Edit Comment
+- [ ] Delete Comment
+
+
+
+
 ## Bash Logs
 
 ဘယ်ကုတ်တွေ ရေးလဲ?
