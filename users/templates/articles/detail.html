@@ -23,6 +23,17 @@
     </tr>
 </table>
 
+<!-- comment create form -->
+<h2>New Comment</h2>
+<form action="{% url 'create_comment' %}" method="POST"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="hidden" name="article_id" value="{{ article.id }}" />
+    <input type="text" name="description" placeholder="description" required/>
+    <input type="file" name="media" placeholder="media" />
+    
+    <input type="submit" value="Create Comment" />
+</form>
+
 <!-- list of comment -->
 <h2>Comment  List</h2>
 {{ comments|length }}

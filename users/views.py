@@ -250,6 +250,23 @@ def article_detail(request, article_id):
     }
     return render(request, 'articles/detail.html', context)
 
+def create_comment(request):
+    user = request.user 
+    user_profile =  None # UserProfileInfo.objects.get(user=user) 
+    if request.method == 'POST':
+        try:
+        
+            article_id = request.POST.get("article_id")
+            article = Article.objects.get(id=article_id) 
+            user_profile = UserProfileInfo.objects.get(user=user) 
+            description = request.POST.get("description")
+            # return HttpResponse(article_id)
+            media = request.FILES.get('media')
+            Comment.objects.create(user_profile_info=user_profile, description= description, media = media, article = article )
+        except ObjectDoesNotExist:
+            user_profile = None
+    # need to add status message
+    return redirect('article_detail',article.id)
 
 def edit_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
