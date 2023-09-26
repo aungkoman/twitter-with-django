@@ -21,3 +21,13 @@ class Article(models.Model):
     # methods
     def __str__(self):
         return self.description
+
+class Comment(models.Model):  
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    user_profile_info = models.ForeignKey(UserProfileInfo, on_delete=models.CASCADE)
+    description = models.TextField()
+    media = models.FileField(upload_to='comment_pictures/', blank=True, null=True)
+
+    # methods
+    def __str__(self):
+        return self.description
