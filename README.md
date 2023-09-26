@@ -18,6 +18,13 @@ view
 url
 
 
+
+### Comment ထည့်မယ်။
+
+- [ ] နောက်ပြီး Bootstrap Template တစ်ခု ရှာမယ်။
+- [ ] Vuexy ပဲ သုံးမယ်။​လိုတဲ့ Component တွေ အစုံအလင်ပါတယ်။
+
+
 ## Procedure
 
 ဘာလုပ်လုပ် Admin Panel ထဲမှာ အရင်ထည့်မယ်။
