@@ -23,6 +23,24 @@
     </tr>
 </table>
 
+<!-- list of comment -->
+<h2>Comment  List</h2>
+{{ comments|length }}
+<ul>
+    {% for comment in comments %}
+        <li>
+            <!-- need to show comment's owner -->
+            <span style="font-style: italic"> {{ comment.user_profile_info.user.username }}</span>;
+            {{ comment.description }} 
+            {% if comment.media|length > 0 %}
+                <br>
+                <img src="{{ comment.media.url }}" width="100px" />
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+<hr>
 <a href="{% url 'edit_article' article.id %}" >Edit</a>
 <a href="{% url 'delete_article' article.id %}" >Delete</a>
 <a href="{% url 'article_list' %}" >Article List</a>

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 # step 1.1 import HttpResponse 
 from django.http import HttpResponse
 
-from users.models import Article, UserProfileInfo
+from users.models import Article, UserProfileInfo, Comment
 from .forms import UserRegistrationForm
 from django.contrib.auth.forms import AuthenticationForm #add this
 from django.contrib.auth import login, authenticate #add this
@@ -243,8 +243,10 @@ def create_article_data(request):
 
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id=article_id)
+    comments = Comment.objects.filter(article = article)
     context = {
-        "article" : article
+        "article" : article,
+        "comments" : comments,
     }
     return render(request, 'articles/detail.html', context)
 
