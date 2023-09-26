@@ -2,9 +2,15 @@
 
 <form action="{% url 'create_user_profile_data' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="text" name="city" value="{{ user_profile.city }}" placeholder="city" />
-    <input type="date" name="dob" value="{{ user_profile.dob|date:'Y-m-d' }}"  placeholder="date" />
-    <input type="file" name="profile_picture" placeholder="profile_picture" />
+    <label for="city">City</label>
+    <input type="text" name="city" id="city" value="{{ user_profile.city }}" placeholder="city" />
+    <label for="dob">Date of Birth</label>
+    <input type="date" name="dob" id="dob" value="{{ user_profile.dob|date:'Y-m-d' }}"  placeholder="date" />
+    <label for="profile_picture">Date of Birth</label>
+    {% if user_profile.profile_picture %}
+        <img width="300px" src="{{  user_profile.profile_picture.url }}" />
+    {% endif %}
+    <input type="file" name="profile_picture" id="profile_picture" placeholder="profile_picture" />
     
     <input type="submit" value="Create" />
 </form>

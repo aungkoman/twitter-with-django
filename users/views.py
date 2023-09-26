@@ -211,6 +211,18 @@ def article_list(request):
     return render(request, 'articles/article_list.html', context)
 
 
+def news_feed(request):
+    articles = []
+    try:
+        articles = Article.objects.all()
+    except ObjectDoesNotExist:
+        user_profile = None
+    context = {
+        "articles" : articles,
+    }
+    return render(request, 'newfeed/newfeed.html', context)
+
+
 def create_article(request):
     return render(request, 'articles/create.html')
 

@@ -25,6 +25,7 @@ urlpatterns = [
     path("create-user-profile-data/", views.create_user_profile_data, name="create_user_profile_data"),
 
     path("article-list/", views.article_list, name="article_list"),
+    path("newsfeed/", views.news_feed, name="news_feed"),
     path("create-article/", views.create_article, name="create_article"),
     path("create-article-data/", views.create_article_data, name="create_article_data"),
     path('article-detail/<int:article_id>/', views.article_detail, name='article_detail'),

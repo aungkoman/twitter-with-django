@@ -1,5 +1,23 @@
 # Twitter with Django
 
+
+## 2023-09-26 NewsFeed
+
+NewsFeed လုပ်မယ်။
+
+သတင်းတွေပြမယ်။
+Comment ရေးမယ်။
+
+Public မှာ အရင်ပြ။
+Comment ရေးချင်ရင် Login ဝင်။
+
+
+
+template 
+view
+url
+
+
 ## Procedure
 
 ဘာလုပ်လုပ် Admin Panel ထဲမှာ အရင်ထည့်မယ်။
