@@ -10,11 +10,16 @@ hello is {{ hello }}.
 
             <p>City : {{ user_profile.city }} </p>
 
-            <img width="300px" src="{{ user_profile.profile_picture.url }}" />
-
+            {% if user_profile.profile_picture %}
+                <img width="300px" src="{{  user_profile.profile_picture.url }}" />
+            {% endif %}
             <ul>
                 <li class="navbar-item">
                     <a href="{% url 'logout' %}" class="login-link">Logout</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="{% url 'article_list' %}" class="login-link">Newsfeed</a>
                 </li>
                 {% if not user_profile %}
                     <li class="navbar-item">
@@ -41,6 +46,9 @@ hello is {{ hello }}.
 <ul>
     <li class="navbar-item">
         <a href="{% url 'login' %}" class="login-link">Login</a>
+    </li>
+    <li class="navbar-item">
+        <a href="{% url 'article_list' %}" class="login-link">Newsfeed</a>
     </li>
 </ul>
 {% endif %}

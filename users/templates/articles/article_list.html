@@ -1,5 +1,8 @@
 <h2>User's Article List</h2>
 <a href="{% url 'create_article' %}">Create New Article</a>
+
+<h2>Article List</h2>
+{{ articles|length }}
 <ul>
     {% for article in articles %}
         <li>
