@@ -28,6 +28,7 @@ def sample_register_route_data(request):
     password = request.POST['password']
     first_name = request.POST['first_name']
     last_name = request.POST['last_name']
+    
     user = User.objects.create_user(username=username, email=email, password=password)
     user.first_name = first_name
     user.last_name = last_name
