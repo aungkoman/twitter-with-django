@@ -125,7 +125,8 @@ def user_panel(request):
         user_profile = None
     context = {
         "hello" : "world",
-        "user_profile" : user_profile
+        "user_profile" : user_profile,
+        "user" : user
     }
     return render(request, 'user_panel.html', context)
 
@@ -145,7 +146,6 @@ def update_user_profile(request):
 
 
 def create_user_profile(request):
-    user = request.user 
     return render(request, 'user_profile/create.html')
 
 def update_user_profile_data(request):
@@ -177,21 +177,11 @@ def delete_user_profile_data(request):
     
 
 def create_user_profile_data(request):
-    # update 
-    if request.method == 'POST':
-        user = request.user 
-        # TodoItem.objects.create(title=title)
-        city = request.POST.get('city')
-        dob = request.POST.get('dob')
-        profile_picture = request.FILES.get('profile_picture')
-        """
-        user_profile.city = city
-        user_profile.dob = dob
-        user_profile.profile_picture = profile_picture
-        user_profile.user = user
-        """
-        UserProfileInfo.objects.create(user=user, city=city, dob = dob, profile_picture = profile_picture)
-        return redirect('user_panel')
+    city = request.POST.get('city')
+    dob = request.POST.get('dob')
+    profile_picture = request.FILES.get('profile_picture')
+    user = request.user
+    UserProfileInfo.objects.create(user=user, city=city, dob = dob, profile_picture = profile_picture)
     return redirect('user_panel')
 
 
