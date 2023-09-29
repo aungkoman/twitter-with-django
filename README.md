@@ -1,5 +1,12 @@
 # Twitter with Django
 
+## 2023-09-29 UI Enchancement with full flag
+
+Vuexy
+
+### asset file တွေ ဘယ်မှာ သိမ်းမလဲ?​ ဘယ်လို Link ချိတ်ပြီးသုံးမလဲ
+
+
 
 ## 2023-09-26 NewsFeed
 

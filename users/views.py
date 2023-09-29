@@ -279,3 +279,6 @@ def delete_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
     article.delete()
     return redirect("article_list")
+
+def profile(request):
+    return render(request, 'ui/newsfeed/profile.html')
