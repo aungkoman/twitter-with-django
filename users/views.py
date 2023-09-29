@@ -282,3 +282,6 @@ def delete_article(request, article_id):
 
 def profile(request):
     return render(request, 'ui/newsfeed/profile.html')
+
+def newsfeed(request):
+    return render(request, 'ui/newsfeed/newsfeed.html')
