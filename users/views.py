@@ -11,6 +11,8 @@ from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
+
 # step 1.2 create function with request parameter
 # index is function name
 def index(request):
@@ -133,7 +135,7 @@ def user_panel(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('index')
+    return redirect('test_html')
 
 
 def update_user_profile(request):
@@ -313,7 +315,12 @@ def login_check(request):
         return redirect("user_panel")
     else:
         # No backend authenticated the credentials
-        return HttpResponse("credential does not match " + username + ", " + password) #render(request, 'user_management/login.html')
+        messages.error(request, 'Invalid credentials. Please try again.')
+        messages.add_message(request, messages.ERROR, 'Username is required.', 'username_error')
+        messages.add_message(request, messages.ERROR, 'Password is required.', 'password_error')
+        return redirect('login_html')
+        # return HttpResponse("credential does not match " + username + ", " + password) #render(request, 'user_management/login.html')
+        # return render(request, 'ui/auth/login.html')
 
 def register_check(request):
     email = request.POST['email']
@@ -336,6 +343,10 @@ def register_check(request):
 
 
 def store_profile(request):
+    if request.user.is_anonymous:
+        print("need to login")
+        return redirect("test_html")
+    
     # getting input data from request
     about = request.POST.get('about')
     city = request.POST.get('city')
@@ -345,14 +356,17 @@ def store_profile(request):
 
     # return HttpResponse(about)
 
+    
+    # check if there is already have one
     # get current logged in user
     user = request.user
-    # check if there is already have one
     try:
         user_profile = UserProfileInfo.objects.get(user=user) 
         user_profile.delete()
     except ObjectDoesNotExist:
         print("something went wrong")
+        # need to redirect back with error message
+        return redirect("test_html")
     
     # store in db
     UserProfileInfo.objects.create(user=user,about=about, city=city, dob = dob, profile_picture = profile_picture, cover_picture= cover_picture)

@@ -21,6 +21,25 @@
                 <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                     <h2 class="card-title fw-bold mb-1">Welcome to Social! 👋</h2>
                     <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    <ul class="messages">
+                        {% for message in messages %}
+                          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}
+                             {% if message.extra_tags %} data-key="{{ message.extra_tags }}"{% endif %}>
+                             {% if message.tags %} TAGS:  {{ message.tags }} <br> {% endif %}
+                             {% if message.extra_tags %} EXTRA_TAGS {{ message.extra_tags }}  <br> {% endif %}
+                             
+                             {{ message }}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+
                     <form class="auth-login-form mt-2" action="{% url 'login_check' %}" method="POST">
                         {% csrf_token %}
                         <div class="mb-1">
