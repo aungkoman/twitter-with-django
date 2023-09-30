@@ -298,6 +298,9 @@ def register_html(request):
 def test_html(request):
     return render(request, 'ui/test/test_page.html')
 
+def create_profile_html(request):
+    return render(request, 'ui/auth/create_profile.html')
+
 def login_check(request):
     # login using username and password
     username = request.POST['username']
@@ -331,3 +334,17 @@ def register_check(request):
         # No backend authenticated the credentials
         return HttpResponse("register failed :  " + username + ", " + password) #render(request, 'user_management/login.html')
 
+
+def store_profile(request):
+    # getting input data from request
+    about = request.POST.get('about')
+    city = request.POST.get('city')
+    dob = request.POST.get('dob')
+    profile_picture = request.FILES.get('profile_picture')
+    cover_picture = request.FILES.get('cover_picture')
+    # get current logged in user
+    user = request.user
+    # store in db
+    UserProfileInfo.objects.create(user=user,about=about, city=city, dob = dob, profile_picture = profile_picture, cover_picture= cover_picture)
+    # redirect to user_panel
+    return redirect('user_panel')

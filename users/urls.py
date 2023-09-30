@@ -44,10 +44,12 @@ urlpatterns = [
     path("base/", views.base_layout, name="base_layout"),
     path("login-html/", views.login_html, name="login_html"),
     path("register-html/", views.register_html, name="register_html"),
+    path("create-profile-html/", views.create_profile_html, name="create_profile_html"),
     path("", views.test_html, name="test_html"),
 
     # check login credential, POST
     path("login-check/", views.login_check, name="login_check"),
     path("register-check/", views.register_check, name="register_check"),
+    path("store-profile/", views.store_profile, name="store_profile"),
     
 ]

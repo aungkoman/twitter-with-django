@@ -5,9 +5,11 @@ from django.contrib.auth.models import User
 class UserProfileInfo(models.Model):  
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     dob = models.DateField(blank=True,null=True) # If no date is selected then Django saves blank field value.  
+    about = models.CharField(max_length=250,blank=True,null=True)
     city = models.CharField(max_length=25,blank=True,null=True)
     # file will be uploaded to MEDIA_ROOT/uploads
     profile_picture = models.FileField(upload_to='profile_pictures/', blank=True, null=True)
+    cover_picture = models.FileField(upload_to='cover_pictures/', blank=True, null=True)
 
     # methods
     def __str__(self):
