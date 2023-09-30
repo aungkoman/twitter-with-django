@@ -35,6 +35,13 @@ About
 City / Address
 Email
 
+
+
+### Redirect Back with Error Messages is ok
+
+Profile Page လုပ်ရမယ်။
+
+
 ## 2023-09-29 UI Enchancement with full flag
 
 Vuexy

@@ -282,8 +282,21 @@ def delete_article(request, article_id):
     article.delete()
     return redirect("article_list")
 
+# own profile since we're tide with request.user
 def profile(request):
-    return render(request, 'ui/newsfeed/profile.html')
+    user = request.user 
+    user_profile =  None # UserProfileInfo.objects.get(user=user) 
+    try:
+        user_profile = UserProfileInfo.objects.get(user=user) 
+    except ObjectDoesNotExist:
+        user_profile = None
+    context = {
+        "hello" : "world",
+        "user_profile" : user_profile,
+        "user" : user
+    }
+    # return render(request, 'user_panel.html', context)
+    return render(request, 'ui/newsfeed/profile.html', context)
 
 def newsfeed(request):
     return render(request, 'ui/newsfeed/newsfeed.html')
