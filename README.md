@@ -1,5 +1,22 @@
 # Twitter with Django
 
+## 2023-09-30 UI အားလုံး Screen Flow အတိုင်း လိုက်ရေးထားမယ်။
+
+html
+views
+urls
+
+ဒါတွေ အရင်လိုက်ထည့်ထားမယ်။
+
+ကြားထဲက Business Logic အတွက်က ဘာမှ​မလုပ်သေးပဲ အခွံပဲ​ ရေးထားမယ်။
+
+how many screen - 
+- login
+- register
+- newsfeed
+- profile
+- profile management
+
 ## 2023-09-29 UI Enchancement with full flag
 
 Vuexy
