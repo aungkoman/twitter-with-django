@@ -342,8 +342,18 @@ def store_profile(request):
     dob = request.POST.get('dob')
     profile_picture = request.FILES.get('profile_picture')
     cover_picture = request.FILES.get('cover_picture')
+
+    # return HttpResponse(about)
+
     # get current logged in user
     user = request.user
+    # check if there is already have one
+    try:
+        user_profile = UserProfileInfo.objects.get(user=user) 
+        user_profile.delete()
+    except ObjectDoesNotExist:
+        print("something went wrong")
+    
     # store in db
     UserProfileInfo.objects.create(user=user,about=about, city=city, dob = dob, profile_picture = profile_picture, cover_picture= cover_picture)
     # redirect to user_panel

@@ -9,9 +9,17 @@ hello is {{ hello }}.
             <p>Created At : {{ request.user.date_joined }} </p>
 
             <p>City : {{ user_profile.city }} </p>
+            <p>About : {{ user_profile.about }} </p>
+            <p>DOB : {{ user_profile.dob }} </p>
 
+            <p>Profile Picture</p>
             {% if user_profile.profile_picture %}
                 <img width="300px" src="{{  user_profile.profile_picture.url }}" />
+            {% endif %}
+
+            <p>Cover Picture</p>
+            {% if user_profile.cover_picture %}
+                <img width="300px" src="{{  user_profile.cover_picture.url }}" />
             {% endif %}
             <ul>
                 <li class="navbar-item">

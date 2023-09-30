@@ -23,7 +23,8 @@
                                     <h4 class="card-title">Create Profile</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form form-vertical"  action="{% url 'store_profile' %}" >
+                                    <!-- file upload ပါတဲ့ Form တွေဆိုရင် enctype attribute value အနေနဲ့ ​multipart/form-data ထည့်ပေးဖို့ လိုမယ်။-->
+                                    <form class="form form-vertical"  action="{% url 'store_profile' %}" method="POST"  enctype="multipart/form-data">
                                         {% csrf_token %}
                                         <div class="row">
                                             <!-- About Input -->
@@ -52,7 +53,7 @@
                                                     <label class="form-label" for="email-id-icon">Birthday</label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="mail"></i></span>
-                                                        <input type="date" id="email-id-icon" class="form-control" name="birthday" placeholder="2002-02-02" />
+                                                        <input type="date" id="email-id-icon" class="form-control" name="dob" placeholder="2002-02-02" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -62,7 +63,7 @@
                                                     <label class="form-label" for="email-id-icon">Profile Picture</label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="mail"></i></span>
-                                                        <input type="file" id="email-id-icon" class="form-control" name="profile_picture" placeholder="2002-02-02" />
+                                                        <input type="file" id="email-id-icon" class="form-control" name="profile_picture"  />
                                                     </div>
                                                 </div>
                                             </div>
@@ -72,7 +73,7 @@
                                                     <label class="form-label" for="email-id-icon">Cover Picture</label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="mail"></i></span>
-                                                        <input type="file" id="email-id-icon" class="form-control" name="cover_picture" placeholder="2002-02-02" />
+                                                        <input type="file" id="email-id-icon" class="form-control" name="cover_picture"/>
                                                     </div>
                                                 </div>
                                             </div>
