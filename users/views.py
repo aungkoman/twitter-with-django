@@ -291,3 +291,6 @@ def base_layout(request):
 
 def login_html(request):
     return render(request, 'ui/auth/login.html')
+
+def register_html(request):
+    return render(request, 'ui/auth/register.html')

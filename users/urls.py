@@ -43,5 +43,6 @@ urlpatterns = [
     path("feed/", views.newsfeed, name="feed"),
     path("base/", views.base_layout, name="base_layout"),
     path("login-html/", views.login_html, name="login_html"),
+    path("register-html/", views.register_html, name="register_html"),
     
 ]
