@@ -9,7 +9,7 @@ urlpatterns = [
     path("hello/", views.index),
     # path("login/", views.login_route, name="login"),
     # path("register/", views.register, name="register"),
-    path("",views.index,name="index"),
+    # path("",views.index,name="index"),
     path("login/", views.sample_login_route, name="sample_login_route"),
     path("login-data/", views.sample_login_route_data, name="sample_login_route_data"),
     path("user-panel/", views.user_panel, name="user_panel"),
@@ -44,6 +44,7 @@ urlpatterns = [
     path("base/", views.base_layout, name="base_layout"),
     path("login-html/", views.login_html, name="login_html"),
     path("register-html/", views.register_html, name="register_html"),
+    path("", views.test_html, name="test_html"),
 
     # check login credential, POST
     path("login-check/", views.login_check, name="login_check"),

@@ -295,6 +295,9 @@ def login_html(request):
 def register_html(request):
     return render(request, 'ui/auth/register.html')
 
+def test_html(request):
+    return render(request, 'ui/test/test_page.html')
+
 def login_check(request):
     # login using username and password
     username = request.POST['username']

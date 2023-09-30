@@ -19,7 +19,21 @@ how many screen -
 
 အမြဲထည့်ရမယ့် Header နဲ့ Footer အပိုင်းတွေကို ဘယ်လို Extend လုပ်လဲ?
 
+base layout ရေးထားမယ်။
+သူ့ထဲမှာ block တွေကို နာမည်ပေးထားမယ်။ 
 
+တကယ်သုံးမယ့် page က
+စောနက layout template ကို extends လုပ်
+သက်ဆိုင်ရာ block ကို implement လုပ်။
+
+
+
+
+Profile Management Form လုပ်ရမယ်။
+
+About
+City / Address
+Email
 
 ## 2023-09-29 UI Enchancement with full flag
 
