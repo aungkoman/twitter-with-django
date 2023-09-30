@@ -288,3 +288,6 @@ def newsfeed(request):
 
 def base_layout(request):
     return render(request, 'ui/layout/base_layout.html')
+
+def login_html(request):
+    return render(request, 'ui/auth/login.html')
