@@ -1,10 +1,18 @@
 {% extends "../layout/base_layout.html" %}
 
-{% block main_section %}
+{% block body %}
     {% load static %}
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/menu/menu-types/horizontal-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/plugins/forms/form-validation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/pages/authentication.css' %}">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Content-->
+    
     <div class="auth-wrapper auth-cover">
         <div class="auth-inner row m-0">
-            <!-- /Brand logo-->
+            
             <!-- Left Text-->
             <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
                 <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="{% static 'app-assets/images/pages/register-v2-dark.svg' %}" alt="Register V2" /></div>
@@ -38,7 +46,7 @@
                         </div>
                         <button class="btn btn-primary w-100" tabindex="5">Sign up</button>
                     </form>
-                    <p class="text-center mt-2"><span>Already have an account?</span><a href="auth-login-cover.html"><span>&nbsp;Sign in instead</span></a></p>
+                    <p class="text-center mt-2"><span>Already have an account?</span><a href="{% url 'login_html' %}"><span>&nbsp;Sign in instead</span></a></p>
                     <div class="divider my-2">
                         <div class="divider-text">or</div>
                     </div>
@@ -48,4 +56,5 @@
             <!-- /Register-->
         </div>
     </div>
+    <!-- END: Content-->
 {% endblock %}
