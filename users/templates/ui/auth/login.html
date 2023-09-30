@@ -21,17 +21,18 @@
                 <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                     <h2 class="card-title fw-bold mb-1">Welcome to Social! 👋</h2>
                     <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
-                    <form class="auth-login-form mt-2" action="index.html" method="POST">
+                    <form class="auth-login-form mt-2" action="{% url 'login_check' %}" method="POST">
+                        {% csrf_token %}
                         <div class="mb-1">
-                            <label class="form-label" for="login-email">Email</label>
-                            <input class="form-control" id="login-email" type="text" name="login-email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1" />
+                            <label class="form-label" for="login-email">Username</label>
+                            <input class="form-control" id="login-email" type="text" name="username" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1" required/>
                         </div>
                         <div class="mb-1">
                             <div class="d-flex justify-content-between">
                                 <label class="form-label" for="login-password">Password</label><a href="auth-forgot-password-cover.html"><small>Forgot Password?</small></a>
                             </div>
                             <div class="input-group input-group-merge form-password-toggle">
-                                <input class="form-control form-control-merge" id="login-password" type="password" name="login-password" placeholder="············" aria-describedby="login-password" tabindex="2" /><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                                <input class="form-control form-control-merge" id="login-password" type="password" name="password" placeholder="············" aria-describedby="login-password" tabindex="2" required/><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                             </div>
                         </div>
                         <div class="mb-1">

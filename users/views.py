@@ -294,3 +294,18 @@ def login_html(request):
 
 def register_html(request):
     return render(request, 'ui/auth/register.html')
+
+def login_check(request):
+    # login using username and password
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username= username, password=password)
+    if user is not None:
+        # A backend authenticated the credentials
+        login(request, user)
+        
+        return redirect("user_panel")
+    else:
+        # No backend authenticated the credentials
+        return HttpResponse("credential does not match " + username + ", " + password) #render(request, 'user_management/login.html')
+    

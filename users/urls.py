@@ -44,5 +44,8 @@ urlpatterns = [
     path("base/", views.base_layout, name="base_layout"),
     path("login-html/", views.login_html, name="login_html"),
     path("register-html/", views.register_html, name="register_html"),
+
+    # check login credential, POST
+    path("login-check/", views.login_check, name="login_check"),
     
 ]
