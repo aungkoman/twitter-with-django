@@ -23,6 +23,13 @@
                                     <h4 class="card-title">Create Profile</h4>
                                 </div>
                                 <div class="card-body">
+                                    {% if messages %}
+                                        <ul class="messages">
+                                            {% for message in messages %}
+                                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
                                     <!-- file upload ပါတဲ့ Form တွေဆိုရင် enctype attribute value အနေနဲ့ ​multipart/form-data ထည့်ပေးဖို့ လိုမယ်။-->
                                     <form class="form form-vertical"  action="{% url 'store_profile' %}" method="POST"  enctype="multipart/form-data">
                                         {% csrf_token %}

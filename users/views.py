@@ -345,7 +345,8 @@ def register_check(request):
 def store_profile(request):
     if request.user.is_anonymous:
         print("need to login")
-        return redirect("test_html")
+        messages.error(request, 'You need to login to create profile')
+        return redirect("create_profile_html")
     
     # getting input data from request
     about = request.POST.get('about')
