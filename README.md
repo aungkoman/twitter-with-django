@@ -17,6 +17,10 @@ how many screen -
 - profile
 - profile management
 
+အမြဲထည့်ရမယ့် Header နဲ့ Footer အပိုင်းတွေကို ဘယ်လို Extend လုပ်လဲ?
+
+
+
 ## 2023-09-29 UI Enchancement with full flag
 
 Vuexy

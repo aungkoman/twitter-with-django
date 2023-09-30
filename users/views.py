@@ -285,3 +285,6 @@ def profile(request):
 
 def newsfeed(request):
     return render(request, 'ui/newsfeed/newsfeed.html')
+
+def base_layout(request):
+    return render(request, 'ui/layout/base_layout.html')

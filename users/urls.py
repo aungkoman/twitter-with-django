@@ -41,5 +41,6 @@ urlpatterns = [
 
     path("profile/", views.profile, name="profile"),
     path("feed/", views.newsfeed, name="feed"),
+    path("base/", views.base_layout, name="base_layout"),
     
 ]
