@@ -308,4 +308,23 @@ def login_check(request):
     else:
         # No backend authenticated the credentials
         return HttpResponse("credential does not match " + username + ", " + password) #render(request, 'user_management/login.html')
+
+def register_check(request):
+    email = request.POST['email']
+    username = request.POST['username']
+    password = request.POST['password']
+    first_name = request.POST['first_name']
+    last_name = request.POST['last_name']
     
+    user = User.objects.create_user(username=username, email=email, password=password)
+    user.first_name = first_name
+    user.last_name = last_name
+    user.save()
+    if user is not None:
+        # A backend authenticated the credentials
+        login(request, user)
+        return redirect("user_panel")
+    else:
+        # No backend authenticated the credentials
+        return HttpResponse("register failed :  " + username + ", " + password) #render(request, 'user_management/login.html')
+

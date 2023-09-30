@@ -47,5 +47,6 @@ urlpatterns = [
 
     # check login credential, POST
     path("login-check/", views.login_check, name="login_check"),
+    path("register-check/", views.register_check, name="register_check"),
     
 ]
