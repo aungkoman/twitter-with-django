@@ -333,11 +333,13 @@
 
                                                 <!-- share and like count and icons -->
                                                 <div class="col-sm-6 d-flex justify-content-between justify-content-sm-end align-items-center mb-2">
+                                                    <!-- comment count -->
                                                     <a href="#" class="text-nowrap">
                                                         <i data-feather="message-square" class="text-body font-medium-3 me-50"></i>
-                                                        <span class="text-muted me-1">{{ list_for_random | random }} </span>
+                                                        <span class="text-muted me-1">{{ article.comment_set.all|length }} </span>
                                                     </a>
 
+                                                    <!-- share count -->
                                                     <a href="#" class="text-nowrap">
                                                         <i data-feather="share-2" class="text-body font-medium-3 mx-50"></i>
                                                         <span class="text-muted">{{ list_for_random | random }}</span>
@@ -348,6 +350,23 @@
                                             <!-- like share -->
 
                                             <!-- comments -->
+                                            {% for comment in article.comment_set.all %}
+                                                <div class="d-flex align-items-start mb-1">
+                                                    <div class="avatar mt-25 me-75">
+                                                        <img src="{{ comment.article.user_profile_info.profile_picture.url }}" alt="Avatar" height="34" width="34" />
+                                                    </div>
+                                                    <div class="profile-user-info w-100">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0">{{ comment.article.user_profile_info.user.first_name }} {{ comment.article.user_profile_info.user.last_name }}</h6>
+                                                            <a href="#">
+                                                                <i data-feather="heart" class="text-body font-medium-3"></i>
+                                                                <span class="align-middle text-muted">{{ list_for_random | random }}</span>
+                                                            </a>
+                                                        </div>
+                                                        <small>{{ comment.description }}</small>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
                                             <div class="d-flex align-items-start mb-1">
                                                 <div class="avatar mt-25 me-75">
                                                     <img src="{% static 'app-assets/images/portrait/small/avatar-s-6.jpg' %}" alt="Avatar" height="34" width="34" />
@@ -382,13 +401,17 @@
                                             </div>
                                             <!--/ comments -->
 
-                                            <!-- comment box -->
-                                            <fieldset class="mb-75">
-                                                <label class="form-label" for="label-textarea">Add Comment</label>
-                                                <textarea class="form-control" id="label-textarea" rows="3" placeholder="Add Comment"></textarea>
-                                            </fieldset>
-                                            <!--/ comment box -->
-                                            <button type="button" class="btn btn-sm btn-primary">Post Comment</button>
+                                            <form action="{% url 'create_comment' %}" method="POST"  enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="article_id" value="{{ article.id }}" />
+                                                <!-- comment box -->
+                                                <fieldset class="mb-75">
+                                                    <label class="form-label" for="label-textarea">Add Comment</label>
+                                                    <textarea name="description" class="form-control" id="label-textarea" rows="3" placeholder="Add Comment"></textarea>
+                                                </fieldset>
+                                                <!--/ comment box -->
+                                                <button type="submit" class="btn btn-sm btn-primary">Post Comment</button>
+                                            </form>
                                         </div>
                                     </div>
                                     <!--/ post 1 -->
