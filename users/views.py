@@ -135,7 +135,8 @@ def user_panel(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('test_html')
+    # return redirect('test_html')
+    return redirect("feed")
 
 
 def update_user_profile(request):
@@ -239,7 +240,8 @@ def article_detail(request, article_id):
         "article" : article,
         "comments" : comments,
     }
-    return render(request, 'articles/detail.html', context)
+    # return render(request, 'articles/detail.html', context)
+    return redirect("feed")
 
 def create_comment(request):
     user = request.user 
@@ -330,7 +332,8 @@ def register_html(request):
     return render(request, 'ui/auth/register.html')
 
 def test_html(request):
-    return render(request, 'ui/test/test_page.html')
+    # return render(request, 'ui/test/test_page.html')
+    return redirect("feed")
 
 def create_profile_html(request):
     return render(request, 'ui/auth/create_profile.html')

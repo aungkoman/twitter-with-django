@@ -29,6 +29,28 @@ post အားလုံးကို ပြဖို့အတွက်။
 
 ### BUG: create profile ui နဲ့ views က အလုပ်မလုပ်။
 
+ပြဿနာ ရှိရင် Message မှာ ထည့်ပေးလိုက်။
+
+
+အခြေခံ Page တွေတော့ ထည့်ပေးလိုက်ပြီ။
+Navigation Bar ပဲ​ လိုတော့မယ်။
+
+Login နဲ့ Register ကလွဲလို့ ကျန်တဲ့နေရာတွေမှာ Navigation Bar  လိုနိုင်တယ်။
+
+နောက် Article Detail Page   ထည့်ရမယ်။
+Page Flow မှန်အောင် ပြန်လုပ်ရမယ်။
+
+အရေးအကြီးဆုံးကတော့ မလိုတဲ့ Route နဲ့ Methods တွေဖျတ်မယ်။
+Naming Convention တစ်ခု ထုတ်မယ်။
+
+- create_model
+- store_model
+- edit_model
+- update_model
+- delete_model
+
+CRUD အတွက်ဆိုရင် ဒါမျိုး Route နဲ့ View အတွဲ ​(၅) ခုတော့ အနည်းဆုံးလိုမယ်.
+
 
 
 ## 2023-09-30 UI အားလုံး Screen Flow အတိုင်း လိုက်ရေးထားမယ်။

@@ -12,7 +12,8 @@ urlpatterns = [
     # path("",views.index,name="index"),
     path("login/", views.sample_login_route, name="sample_login_route"),
     path("login-data/", views.sample_login_route_data, name="sample_login_route_data"),
-    path("user-panel/", views.user_panel, name="user_panel"),
+    #path("user-panel/", views.user_panel, name="user_panel"),
+    path("user-panel/", views.profile, name="user_panel"),
     path("logout/", views.user_logout, name="logout"),
     path("update/", views.update, name="update"),
 
@@ -33,6 +34,7 @@ urlpatterns = [
     path("create-article/", views.create_article, name="create_article"),
     path("store-article/", views.store_article, name="store_article"),
     path('article-detail/<int:article_id>/', views.article_detail, name='article_detail'),
+    # path('article-detail/<int:article_id>/', views.newsfeed, name='article_detail'),
     path('edit-article/<int:article_id>/', views.edit_article, name='edit_article'),
     path('edit-article-data/<int:article_id>/', views.edit_article_data, name='edit_article_data'),
     path('delete-article/<int:article_id>/', views.delete_article, name='delete_article'),

@@ -40,6 +40,40 @@
    <!-- BEGIN: Body-->
    <body class="horizontal-layout horizontal-menu  navbar-floating footer-static  " data-open="hover"
       data-menu="horizontal-menu" data-col="">
+      <style>
+         ul.test-nav li{
+            display: inline-block;
+            padding: 8px;
+         }
+         ul.test-nav li:hover{
+            background-color: black;
+            color: white;
+         }
+      </style>
+      <ul class="test-nav">
+         <li>
+            <a href="{% url 'login_html' %}" >Login</a>
+         </li>
+         <li>
+            <a href="{% url 'register_html' %}" >Register</a>
+         </li>
+         <li>
+            <a href="{% url 'feed' %}" >News Feed</a>
+         </li>
+         <li>
+            <a href="{% url 'profile' %}" >Profile</a>
+         </li>
+         <li>
+            <a href="{% url 'create_profile_html' %}" >Create Profile</a>
+         </li>
+         <li>
+            <a href="{% url 'create_article' %}" >Create Article</a>
+         </li>
+         <li>
+            <a href="{% url 'logout' %}" >Logout</a>
+         </li>
+      </ul>
+
       <!-- BEGIN: Header-->
       {% block header %}
       {% endblock %}

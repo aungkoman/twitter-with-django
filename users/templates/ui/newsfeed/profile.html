@@ -353,11 +353,11 @@
                                             {% for comment in article.comment_set.all %}
                                                 <div class="d-flex align-items-start mb-1">
                                                     <div class="avatar mt-25 me-75">
-                                                        <img src="{{ comment.article.user_profile_info.profile_picture.url }}" alt="Avatar" height="34" width="34" />
+                                                        <img src="{{ comment.user_profile_info.profile_picture.url }}" alt="Avatar" height="34" width="34" />
                                                     </div>
                                                     <div class="profile-user-info w-100">
                                                         <div class="d-flex align-items-center justify-content-between">
-                                                            <h6 class="mb-0">{{ comment.article.user_profile_info.user.first_name }} {{ comment.article.user_profile_info.user.last_name }}</h6>
+                                                            <h6 class="mb-0">{{ comment.user_profile_info.user.first_name }} {{ comment.user_profile_info.user.last_name }}</h6>
                                                             <a href="#">
                                                                 <i data-feather="heart" class="text-body font-medium-3"></i>
                                                                 <span class="align-middle text-muted">{{ list_for_random | random }}</span>
