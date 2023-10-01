@@ -20,7 +20,7 @@
                         <div class="col-md-6 col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Create Profile</h4>
+                                    <h4 class="card-title">Create Article</h4>
                                 </div>
                                 <div class="card-body">
                                     {% if messages %}
@@ -31,56 +31,27 @@
                                         </ul>
                                     {% endif %}
                                     <!-- file upload ပါတဲ့ Form တွေဆိုရင် enctype attribute value အနေနဲ့ ​multipart/form-data ထည့်ပေးဖို့ လိုမယ်။-->
-                                    <form class="form form-vertical"  action="{% url 'store_profile' %}" method="POST"  enctype="multipart/form-data">
+                                    <form class="form form-vertical"  action="{% url 'store_article' %}" method="POST"  enctype="multipart/form-data">
                                         {% csrf_token %}
                                         <div class="row">
                                             <!-- About Input -->
                                             <div class="col-12">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon">About</label>
+                                                    <label class="form-label" for="first-name-icon">Description</label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <input type="text" id="first-name-icon" class="form-control" name="about" placeholder="About" />
+                                                        <input type="text" id="first-name-icon" class="form-control" name="description" placeholder="description" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- City Input -->
-                                            <div class="col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon">City</label>
-                                                    <div class="input-group input-group-merge">
-                                                        <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <input type="text" id="first-name-icon" class="form-control" name="city" placeholder="City" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Birthday Input -->
-                                            <div class="col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="email-id-icon">Birthday</label>
-                                                    <div class="input-group input-group-merge">
-                                                        <span class="input-group-text"><i data-feather="mail"></i></span>
-                                                        <input type="date" id="email-id-icon" class="form-control" name="dob" placeholder="2002-02-02" />
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <!-- Profile Picture Input -->
                                             <div class="col-12">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="email-id-icon">Profile Picture</label>
+                                                    <label class="form-label" for="email-id-icon">media</label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="mail"></i></span>
-                                                        <input type="file" id="email-id-icon" class="form-control" name="profile_picture"  />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Cover Picture Input -->
-                                            <div class="col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="email-id-icon">Cover Picture</label>
-                                                    <div class="input-group input-group-merge">
-                                                        <span class="input-group-text"><i data-feather="mail"></i></span>
-                                                        <input type="file" id="email-id-icon" class="form-control" name="cover_picture"/>
+                                                        <input type="file" id="email-id-icon" class="form-control" name="media"  />
                                                     </div>
                                                 </div>
                                             </div>

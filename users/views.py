@@ -218,7 +218,7 @@ def news_feed(request):
 
 
 
-def create_article_data(request):
+def store_article(request):
     user = request.user 
     user_profile =  None # UserProfileInfo.objects.get(user=user) 
     if request.method == 'POST':
