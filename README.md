@@ -1,5 +1,23 @@
 # Twitter with Django
 
+
+## 2023-10-01 တစ်နာရီ​တစ်မျက်နှာ
+
+Model
+Form
+Select
+
+
+### Post
+
+- create
+- select
+- edit
+- delete
+
+
+
+
 ## 2023-09-30 UI အားလုံး Screen Flow အတိုင်း လိုက်ရေးထားမယ်။
 
 html

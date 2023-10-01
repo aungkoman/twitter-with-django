@@ -216,8 +216,6 @@ def news_feed(request):
     return render(request, 'newfeed/newfeed.html', context)
 
 
-def create_article(request):
-    return render(request, 'articles/create.html')
 
 
 def create_article_data(request):
@@ -386,3 +384,8 @@ def store_profile(request):
     UserProfileInfo.objects.create(user=user,about=about, city=city, dob = dob, profile_picture = profile_picture, cover_picture= cover_picture)
     # redirect to user_panel
     return redirect('user_panel')
+
+
+def create_article(request):
+    # return render(request, 'articles/create.html')
+    return render(request, 'ui/articles/create_article.html')
