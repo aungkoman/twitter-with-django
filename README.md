@@ -27,6 +27,10 @@ news feed ကို ပြင်ရမယ်။
 post အားလုံးကို ပြဖို့အတွက်။
 
 
+### BUG: create profile ui နဲ့ views က အလုပ်မလုပ်။
+
+
+
 ## 2023-09-30 UI အားလုံး Screen Flow အတိုင်း လိုက်ရေးထားမယ်။
 
 html

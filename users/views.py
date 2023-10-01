@@ -307,7 +307,18 @@ def profile(request):
     return render(request, 'ui/newsfeed/profile.html', context)
 
 def newsfeed(request):
-    return render(request, 'ui/newsfeed/newsfeed.html')
+    # need to pass list of articles
+    articles = []
+    list_for_random = range(100)
+    try:
+        articles = Article.objects.all().order_by('-id')
+    except ObjectDoesNotExist:
+        user_profile = None
+    context = {
+        "articles" : articles,
+        "list_for_random" : list_for_random
+    }
+    return render(request, 'ui/newsfeed/newsfeed.html', context)
 
 def base_layout(request):
     return render(request, 'ui/layout/base_layout.html')
@@ -382,13 +393,18 @@ def store_profile(request):
     # check if there is already have one
     # get current logged in user
     user = request.user
+    print(user)
     try:
         user_profile = UserProfileInfo.objects.get(user=user) 
-        user_profile.delete()
+        print(user_profile)
+        if user_profile != None :
+            print("tyring to delete")
+            user_profile.delete()
     except ObjectDoesNotExist:
         print("something went wrong")
         # need to redirect back with error message
-        return redirect("test_html")
+        # messages.error(request, 'You need to login to create profile')
+        # return redirect("test_html")
     
     # store in db
     UserProfileInfo.objects.create(user=user,about=about, city=city, dob = dob, profile_picture = profile_picture, cover_picture= cover_picture)
