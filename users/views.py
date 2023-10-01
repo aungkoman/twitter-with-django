@@ -284,14 +284,24 @@ def delete_article(request, article_id):
 def profile(request):
     user = request.user 
     user_profile =  None # UserProfileInfo.objects.get(user=user) 
+    articles = []
+    list_for_random = range(100)
     try:
         user_profile = UserProfileInfo.objects.get(user=user) 
     except ObjectDoesNotExist:
         user_profile = None
+    
+    if user_profile != None :
+        try:
+            articles = Article.objects.filter(user_profile_info = user_profile).order_by('-id')
+        except Exception:
+            articles  = []
+    
     context = {
-        "hello" : "world",
         "user_profile" : user_profile,
-        "user" : user
+        "user" : user,
+        "articles" : articles,
+        "list_for_random" : list_for_random
     }
     # return render(request, 'user_panel.html', context)
     return render(request, 'ui/newsfeed/profile.html', context)

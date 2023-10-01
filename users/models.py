@@ -10,6 +10,8 @@ class UserProfileInfo(models.Model):
     # file will be uploaded to MEDIA_ROOT/uploads
     profile_picture = models.FileField(upload_to='profile_pictures/', blank=True, null=True)
     cover_picture = models.FileField(upload_to='cover_pictures/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     # methods
     def __str__(self):
@@ -19,6 +21,8 @@ class Article(models.Model):
     user_profile_info = models.ForeignKey(UserProfileInfo, on_delete=models.CASCADE)
     description = models.TextField()
     media = models.FileField(upload_to='article_pictures/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     # methods
     def __str__(self):
@@ -29,6 +33,8 @@ class Comment(models.Model):
     user_profile_info = models.ForeignKey(UserProfileInfo, on_delete=models.CASCADE)
     description = models.TextField()
     media = models.FileField(upload_to='comment_pictures/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     # methods
     def __str__(self):

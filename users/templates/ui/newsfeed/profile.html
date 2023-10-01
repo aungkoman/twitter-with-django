@@ -58,7 +58,7 @@
                                                     <li class="nav-item">
                                                         <a class="nav-link fw-bold" href="{% url 'create_article' %}">
                                                             <span class="d-none d-md-block">New Post</span>
-                                                            <i data-feather="editျ" class="d-block d-md-none"></i>
+                                                            <i data-feather="edit" class="d-block d-md-none"></i>
                                                         </a>
                                                     </li>
                                                     <li class="nav-item">
@@ -69,10 +69,12 @@
                                                     </li>
                                                 </ul>
                                                 <!-- edit button -->
-                                                <button class="btn btn-primary">
-                                                    <i data-feather="edit" class="d-block d-md-none"></i>
-                                                    <span class="fw-bold d-none d-md-block">Edit</span>
-                                                </button>
+                                                <a href="{% url 'create_profile_html' %}" >
+                                                    <button class="btn btn-primary">
+                                                        <i data-feather="edit" class="d-block d-md-none"></i>
+                                                        <span class="fw-bold d-none d-md-block">Edit</span>
+                                                    </button>
+                                                </a>
                                             </div>
                                         </div>
                                         <!--/ collapse  -->
@@ -269,6 +271,128 @@
 
                             <!-- center profile info section -->
                             <div class="col-lg-6 col-12 order-1 order-lg-2">
+
+                                <!-- need to iterate artilces -->
+                                {% for article in articles %}
+                                    <!-- post 1 -->
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-start align-items-center mb-1">
+                                                <!-- avatar -->
+                                                <div class="avatar me-1">
+                                                    <img src="{{  article.user_profile_info.profile_picture.url }}" alt="avatar img" height="50" width="50" />
+                                                </div>
+                                                <!--/ avatar -->
+                                                <div class="profile-user-info">
+                                                    <h6 class="mb-0">{{  article.user_profile_info.user.first_name }} {{  article.user_profile_info.user.last_name }}</h6>
+                                                    <small class="text-muted">{{  article.created_at }}</small>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                {{  article.description }}
+                                            </p>
+                                            {% if article.media|length > 0 %}
+                                                <!-- post img -->
+                                                <img class="img-fluid rounded mb-75" src="{{ article.media.url }}" alt="avatar img" />
+                                                <!--/ post img -->
+                                            {% endif %}
+
+                                            <!-- like share -->
+                                            <div class="row d-flex justify-content-start align-items-center flex-wrap pb-50">
+                                                <div class="col-sm-6 d-flex justify-content-between justify-content-sm-start mb-2">
+                                                    <a href="#" class="d-flex align-items-center text-muted text-nowrap">
+                                                        <i data-feather="heart" class="profile-likes font-medium-3 me-50"></i>
+                                                        <!-- <span>1.25k</span> -->
+                                                        <!-- number of reaction -->
+                                                        <span>{{ list_for_random | random }}</span>
+                                                    </a>
+
+                                                    <!-- avatar group with tooltip -->
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar-group ms-1">
+                                                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Trina Lynes" class="avatar pull-up">
+                                                                <img src="{% static 'app-assets/images/portrait/small/avatar-s-1.jpg' %}" alt="Avatar" height="26" width="26" />
+                                                            </div>
+                                                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Lilian Nenez" class="avatar pull-up">
+                                                                <img src="{% static 'app-assets/images/portrait/small/avatar-s-2.jpg' %}" alt="Avatar" height="26" width="26" />
+                                                            </div>
+                                                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Alberto Glotzbach" class="avatar pull-up">
+                                                                <img src="{% static 'app-assets/images/portrait/small/avatar-s-3.jpg' %}" alt="Avatar" height="26" width="26" />
+                                                            </div>
+                                                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="George Nordic" class="avatar pull-up">
+                                                                <img src="{% static 'app-assets/images/portrait/small/avatar-s-5.jpg' %}" alt="Avatar" height="26" width="26" />
+                                                            </div>
+                                                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Vinnie Mostowy" class="avatar pull-up">
+                                                                <img src="{% static 'app-assets/images/portrait/small/avatar-s-4.jpg' %}" alt="Avatar" height="26" width="26" />
+                                                            </div>
+                                                        </div>
+                                                        <a href="#" class="text-muted text-nowrap ms-50">+{{ list_for_random | random }} more</a>
+                                                    </div>
+                                                    <!-- avatar group with tooltip -->
+                                                </div>
+
+                                                <!-- share and like count and icons -->
+                                                <div class="col-sm-6 d-flex justify-content-between justify-content-sm-end align-items-center mb-2">
+                                                    <a href="#" class="text-nowrap">
+                                                        <i data-feather="message-square" class="text-body font-medium-3 me-50"></i>
+                                                        <span class="text-muted me-1">{{ list_for_random | random }} </span>
+                                                    </a>
+
+                                                    <a href="#" class="text-nowrap">
+                                                        <i data-feather="share-2" class="text-body font-medium-3 mx-50"></i>
+                                                        <span class="text-muted">{{ list_for_random | random }}</span>
+                                                    </a>
+                                                </div>
+                                                <!-- share and like count and icons -->
+                                            </div>
+                                            <!-- like share -->
+
+                                            <!-- comments -->
+                                            <div class="d-flex align-items-start mb-1">
+                                                <div class="avatar mt-25 me-75">
+                                                    <img src="{% static 'app-assets/images/portrait/small/avatar-s-6.jpg' %}" alt="Avatar" height="34" width="34" />
+                                                </div>
+                                                <div class="profile-user-info w-100">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <h6 class="mb-0">Kitty Allanson</h6>
+                                                        <a href="#">
+                                                            <i data-feather="heart" class="text-body font-medium-3"></i>
+                                                            <span class="align-middle text-muted">34</span>
+                                                        </a>
+                                                    </div>
+                                                    <small>Easy & smart fuzzy search🕵🏻 functionality which enables users to search quickly.</small>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-start mb-1">
+                                                <div class="avatar mt-25 me-75">
+                                                    <img src="{% static 'app-assets/images/portrait/small/avatar-s-8.jpg' %}" alt="Avatar" height="34" width="34" />
+                                                </div>
+                                                <div class="profile-user-info w-100">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <h6 class="mb-0">Jackey Potter</h6>
+                                                        <a href="#">
+                                                            <i data-feather="heart" class="profile-likes font-medium-3"></i>
+                                                            <span class="align-middle text-muted">61</span>
+                                                        </a>
+                                                    </div>
+                                                    <small>
+                                                        Unlimited color🖌 options allows you to set your application color as per your branding 🤪.
+                                                    </small>
+                                                </div>
+                                            </div>
+                                            <!--/ comments -->
+
+                                            <!-- comment box -->
+                                            <fieldset class="mb-75">
+                                                <label class="form-label" for="label-textarea">Add Comment</label>
+                                                <textarea class="form-control" id="label-textarea" rows="3" placeholder="Add Comment"></textarea>
+                                            </fieldset>
+                                            <!--/ comment box -->
+                                            <button type="button" class="btn btn-sm btn-primary">Post Comment</button>
+                                        </div>
+                                    </div>
+                                    <!--/ post 1 -->
+                                {% endfor %}
                                 <!-- post 1 -->
                                 <div class="card">
                                     <div class="card-body">
