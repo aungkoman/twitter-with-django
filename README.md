@@ -51,7 +51,23 @@ Naming Convention တစ်ခု ထုတ်မယ်။
 
 CRUD အတွက်ဆိုရင် ဒါမျိုး Route နဲ့ View အတွဲ ​(၅) ခုတော့ အနည်းဆုံးလိုမယ်.
 
+GRANT ALL PRIVILEGES ON *.* TO 'storage'@'localhost';
+FLUSH PRIVILEGES;
 
+
+
+sudo apt update
+sudo apt install php8.1 libapache2-mod-php8.1
+sudo systemctl restart apache2
+sudo apt update
+sudo apt install php8.1-fpm libapache2-mod-fcgid
+sudo a2enmod proxy_fcgi setenvif
+sudo a2enconf php8.1-fpm
+sudo systemctl restart apache2
+
+sudo apt-get install php8.1-mysql
+
+sudo service apache2 restart
 
 ## 2023-09-30 UI အားလုံး Screen Flow အတိုင်း လိုက်ရေးထားမယ်။
 
