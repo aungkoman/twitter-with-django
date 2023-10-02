@@ -231,7 +231,7 @@ def store_article(request):
         except ObjectDoesNotExist:
             user_profile = None
     # need to add status message
-    return redirect("article_list")
+    return redirect("feed")
 
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id=article_id)
