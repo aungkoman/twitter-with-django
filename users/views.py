@@ -20,6 +20,17 @@ def index(request):
     return render(request, 'index.html')
     # return HttpResponse("Hello World")
 
+def show_login_html(request):
+    return render(request, "ui/auth/login.html")
+
+def check_login(request):
+    name = request.POST['username']
+    pwd = request.POST['password']
+    user = authenticate(username = name, password = pwd)
+    if user is not None:
+        return redirect("user_panel")
+    else:
+        return redirect("show_login_html")
 
 def sample_register_route(request):
     return render(request, 'user_management/register.html')

@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path("/login-form", views.show_login_html, name="show_login_html"),
+    path("/check", views.check_login, name="login_check"),
     # add first element to urlpatterns array
     # path function accept two parameter
     # first parameter is url path
