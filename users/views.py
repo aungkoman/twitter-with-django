@@ -293,6 +293,20 @@ def delete_article(request, article_id):
     article.delete()
     return redirect("article_list")
 
+
+"""
+try:
+    user_profile = UserProfileInfo.objects.get(user=user) 
+except ObjectDoesNotExist:
+    user_profile = None
+
+def obj_list(request):
+    obj_list  = []
+    try:
+        currentUser = request.user
+        obj_list =  Task.objects.filter(user = currentUser)
+        return render(request,"ListPage.html",{"myTasks": obj_list})
+"""
 # own profile since we're tide with request.user
 def profile(request):
     user = request.user 
